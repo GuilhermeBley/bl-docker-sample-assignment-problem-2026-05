@@ -15,12 +15,20 @@ Type `docker build -t bl-sample-2026-05-my-python-app ./assignment-problem/pytho
 Type `docker run -p 3000:3000 bl-sample-2026-05-my-node-app` (run the container)
 
 - Python project
-Type `docker exec -it bl-sample-2026-05-my-python-app sh`
+Type `docker run -p 3000:3000 bl-sample-2026-05-my-python-app`
 
 ## 3- Re-create both containers and assign names to both containers. Use these names to stop and restart both containers.
 
+- Node project
+Type `docker create --name renamed-container-bl-sample-2026-05-my-node-app -p 3000:3000 bl-sample-2026-05-my-node-app`
+
+- Python project
+Type `docker create --name renamed-container-bl-sample-2026-05-my-python-app -p 3000:3000 bl-sample-2026-05-my-node-app`
+
 ## 4- Clean up (remove) all stopped (and running) containers, clean up all created images.
 
-## 5- Re-build the images - this time with names and tags assigned to them.
+- Node project
+`docker rm renamed-container-bl-sample-2026-05-my-node-app`
 
-## 6- Run new containers based on the re-built images, ensuring that the containers are removed automatically when stopped.
+- Python project
+`docker rm renamed-container-bl-sample-2026-05-my-python-app`
